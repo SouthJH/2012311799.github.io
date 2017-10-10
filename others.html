@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	
+	<title>GOTY</title>
+	<link rel="stylesheet" type="text/css" href="others.css" />
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<input type="button" id="left_btn" value="<" >
+			</td>
+			<td>
+				<input type="button" id="right_btn" value=">" >
+			</td>
+		</tr>
+	</table>
+	
+	<image src="./image/2016.png" id="goty_image" />
+	<script>
+		index = 2016;
+	
+		var image = document.getElementById('goty_image');
+		var l_btn = document.getElementById('left_btn');
+		var r_btn = document.getElementById('right_btn');
+		
+		l_btn.onclick = function(){
+			index -= 1;
+			if(index == 2012)
+				index = 2016;
+			
+			image.src = "./image/" + index.toString() + ".png";
+		}
+		r_btn.onclick = function(){
+			index += 1;
+			if(index == 2017)
+				index = 2013
+			
+			image.src = "./image/" + index.toString() + ".png";
+		}
+	</script>
+</body>
+</html>
